@@ -59,3 +59,8 @@ export default {
 <template>
   <router-view> </router-view>
 </template>
+this.listener = new ROSLIB.Topic({
+  ros: this.ros,
+  name: "/chatter",
+  messageType: "std_msgs/String",
+});
