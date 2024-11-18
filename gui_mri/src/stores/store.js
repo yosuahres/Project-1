@@ -6,7 +6,7 @@ export const useMesinStore = defineStore("alerts", {
     return {
       // all these properties will have their type inferred automatically
       dataMesin: {
-        // bloodPressure: 0,  
+        // bloodPressure: 0, 
       },
       utils: {
         //status: "false",
