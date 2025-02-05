@@ -152,7 +152,7 @@
             <div v-for="n in 7" :key="n" :style="getLineStyle(n)" class="line"></div>
             <div class="center-circle">
               <p class="text">Remain time</p>
-              <p class="time">00:00</p>
+              <p class="time">{{ formattedTime }}</p>
             </div>
         </div>
             <div class="labels">
@@ -280,7 +280,44 @@
 
 <script>
 export default {
+  data() {
+    return {
+      remainingTime: 180,
+    };
+  },
+
+  computed: {
+    formattedTime() {
+      const minutes = String(Math.floor(this.remainingTime / 60)).padStart(2, '0');
+      const seconds = String(this.remainingTime % 60).padStart(2, '0');
+      return `${minutes}:${seconds}`;
+    },
+  },
+
+  mounted() {
+    this.startCountdown();
+  },
+
   methods: {
+    // startTimer() {
+    //   setInterval(() => {
+    //     const now = new Date();
+    //     const hours = String(now.getHours()).padStart(2, '0');
+    //     const minutes = String(now.getMinutes()).padStart(2, '0');
+    //     this.time = `${hours}:${minutes}`;
+    //   }, 1000);
+    // },
+
+    startCountdown() {
+      const countdownInterval = setInterval(() => {
+        if (this.remainingTime > 0) {
+          this.remainingTime--;
+        } else {
+          clearInterval(countdownInterval);
+        }
+      }, 1000);
+    },
+
     getLineStyle(n) {
       const startAngle = 20;
       const endAngle = -200;
