@@ -4,11 +4,11 @@
       <!-- Header -->
       <div class="row first-row">
         <div class="col-5 mt-2">
-          <button class="btn btn-success">Treatment HD</button>
+          <button class="btn btn-success fade-effect-frth">Treatment HD</button>
         </div>
         <div class="col-2"></div>
         <div class="col-4 mt-2">
-          <button class="btn btn-warning" @click="goToPatientCard">No Patient Card</button>
+          <button class="btn btn-warning fade-effect-frth" @click="goToPatientCard">No Patient Card</button>
         </div>
         <div class="col-1 mt-1">
           <div class="circle">
@@ -19,11 +19,13 @@
 
       <!-- First Row -->
       <div class="row first-row">
+
         <div class="col-7">
           <div class="row">
+
             <div class="col-4">
               <p>ART</p>
-              <button class="btn btn-success value-right btn-first small-btn">
+              <button class="btn btn-success value-right btn-first fade-effect small-btn">
                 <h2 class="text-first">21</h2>
               </button>
               <div class="indicator-bar">
@@ -37,9 +39,10 @@
                 </div>
               </div>              
             </div>
+
             <div class="col-4">
               <p>VEN</p>
-              <button class="btn btn-success value-right btn-first small-btn">
+              <button class="btn btn-success value-right btn-first fade-effect small-btn">
                 <h2 class="text-first">68</h2>
               </button>
               <div class="indicator-bar">
@@ -53,9 +56,10 @@
                 </div>
               </div>              
             </div>
+
             <div class="col-4">
               <p>DIP</p>
-              <button class="btn btn-success value-right btn-first small-btn">
+              <button class="btn btn-success value-right btn-first fade-effect small-btn">
                 <h2 class="text-first">86</h2>
               </button>
               <div class="indicator-bar">
@@ -73,10 +77,13 @@
         </div>
       
         <div class="col-3 panel-darkgreen mt-2">
+
           <div class="row mt-3">
+
             <div class="col-6 flex-center">
+
               <p class="text-left">UF Volume</p>
-              <button class="btn btn-success btn-scd">
+              <button class="btn btn-success btn-scd fade-effect">
                 <h2 class="text-scd">0<sup class="adjusted-sup">,01</sup></h2>
               </button>
               <div class="indicator-scd">
@@ -89,10 +96,12 @@
                 </div>
               </div>
             </div>
+
             <div class="col-6 flex-center" style="margin-bottom: 40px;">
+
               <p class="text-left">UF Rate</p>
-              <button class="btn btn-success btn-scd">
-                <h2 class="text-scd">0<sup class="adjusted-sup">,38</sup></h2>
+              <button class="btn btn-success btn-scd fade-effect" style="background-color: #fae075;">
+                <h2 class="text-scd txt-black">0<sup class="adjusted-sup txt-black">,38</sup></h2>
               </button>
               <div class="indicator-scd">
                 <span class="unitg">L</span>
@@ -104,7 +113,7 @@
 
       <!-- Second Row -->
       <div class="row">
-        <div class="col-2 bg-red">
+        <div class="col-2">
           <div class="row mt-2 transparent-bg left-container" style="position: relative; left: -20px;">
             <div class="col-12">
               <div class="bg-skyblue text-center" style="border-radius: 0 10px 0 0;">SYS</div>
@@ -191,31 +200,31 @@
         <div class="col-2 bg-grey right-button-container">
           <div class="row mt-2">
             <div class="col-12 flex-center-two">
-              <button class="btn btn-light btn-right-one">Alarm reset</button>
+              <button class="btn btn-light btn-right-one fade-effect-scd bg-grey">Alarm reset</button>
             </div>
           </div>
           <div class="row">
             <div class="col-12 flex-center-two">
-              <button class="btn btn-light btn-right-two">Treatment / Bypass</button>
+              <button class="btn btn-light btn-right-two fade-effect-scd bg-grey">Treatment / Bypass</button>
             </div>
           </div>
           <div class="row">
             <div class="col-12 flex-center-two">
-              <button class="btn btn-light btn-right-one">
+              <button class="btn btn-light btn-right-one fade-effect-scd bg-grey">
                 <img src="../assets/icons/pharmacy.png" style="width: 60px; height: 60px;" alt="Pharmacy" />
               </button>
             </div>
           </div>
           <div class="row">
             <div class="col-12 flex-center-two">
-              <button class="btn btn-light btn-right-one">
+              <button class="btn btn-light btn-right-one fade-effect-scd bg-grey">
                 <span class="break-word text-black">Dis-<br>connect</span>
               </button>
             </div>
           </div>
           <div class="row">
             <div class="col-12 flex-center-two">
-              <button class="btn btn-light btn-right-two">Wash back</button>
+              <button class="btn btn-light btn-right-two fade-effect-scd bg-grey">Wash back</button>
             </div>
           </div> 
         </div>
@@ -223,33 +232,33 @@
 
       <!-- Third Row -->
       <div class="row">
-        <div class="col-10 bg-red">
+        <div class="col-10">
           <div class="button-container">
-            <button class="btn-bottom text-black centered-button">
+            <button class="btn-bottom text-black centered-button fade-effect-thrd" style="background-color: #e4dee1">
+              <img src="../assets/icons/information.png" alt="information" style="width: 55px; height: 55px;"/>
+            </button> 
+            <button class="btn-bottom text-black centered-button fade-effect-thrd" style="background-color: #e4dee1">
               <img src="../assets/icons/information.png" alt="information" style="width: 55px; height: 55px;"/>
             </button>
-            <button class="btn-bottom text-black centered-button">
+            <button class="btn-bottom text-black centered-button fade-effect-thrd" style="background-color: #e4dee1">
               <img src="../assets/icons/information.png" alt="information" style="width: 55px; height: 55px;"/>
             </button>
-            <button class="btn-bottom text-black centered-button">
+            <button class="btn-bottom text-black centered-button fade-effect-thrd" style="background-color: #e4dee1">
               <img src="../assets/icons/information.png" alt="information" style="width: 55px; height: 55px;"/>
             </button>
-            <button class="btn-bottom text-black centered-button">
-              <img src="../assets/icons/information.png" alt="information" style="width: 55px; height: 55px;"/>
-            </button>
-            <button class="btn-bottom text-black centered-button">
+            <button class="btn-bottom text-black centered-button fade-effect-thrd" style="background-color: #e4dee1">
               <img src="../assets/icons/timer.png" alt="information" style="width: 80px; height: 80px;"/>
             </button>
-            <button class="btn-bottom text-black centered-button">
+            <button class="btn-bottom text-black centered-button fade-effect-thrd" style="background-color: #e4dee1">
               <img src="../assets/icons/pipe.png" alt="information" style="width: 80px; height: 80px;"/>
             </button>
-            <button class="btn-bottom text-black centered-button">
+            <button class="btn-bottom text-black centered-button fade-effect-thrd" style="background-color: #e4dee1">
               <img src="../assets/icons/hd.png" alt="HD" style="width: 80px; height: 80px;"/>
             </button>
-            <button class="btn-bottom text-black centered-button">
+            <button class="btn-bottom text-black centered-button fade-effect-thrd" style="background-color: #e4dee1">
               <img src="../assets/icons/docs.png" alt="docs" style="width: 55px; height: 55px;"/>
             </button>
-            <button class="btn-bottom text-black centered-button">
+            <button class="btn-bottom text-black centered-button fade-effect-thrd" style="background-color: #e4dee1">
               <img src="../assets/icons/information.png" alt="information" style="width: 55px; height: 55px;"/>
             </button>
           </div>
@@ -289,6 +298,108 @@ export default {
 </script>
 
 <style scoped>
+.txt-black{
+  color: black;
+}
+
+.fade-effect{
+  position: relative;
+  overflow: hidden;
+  border: solid 1px black;
+}
+
+.fade-effect::before {
+  content: '';
+  position: absolute;
+  left: 3%;
+  right: 3%;
+  top: 0%;
+  height: 25%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), transparent);
+  border-radius: 25px;
+}
+
+.fade-effect::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 30%;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.5), transparent);
+}
+
+.fade-effect-scd{
+  position: relative;
+  overflow: hidden;
+  border: solid 1px black;
+}
+
+.fade-effect-scd::before {
+  content: '';
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 2%;
+  height: 25%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1), transparent);
+  border-radius: 25px;
+}
+
+.fade-effect-thrd{
+  position: relative;
+  overflow: hidden;
+  border: solid 1px black;
+}
+
+.fade-effect-thrd::before {
+  content: '';
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  top: 2%;
+  height: 25%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), transparent);
+  border-radius: 25px;
+}
+
+.fade-effect-thrd::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 30%;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.5), transparent);
+}
+
+.fade-effect-frth{
+  position: relative;
+  overflow: hidden;
+  border: solid 1px black;
+}
+
+.fade-effect-frth::before {
+  content: '';
+  position: absolute;
+  left: 1%;
+  right: 1%;
+  top: 2%;
+  height: 25%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), transparent);
+  border-radius: 25px;
+}
+
+.fade-effect-frth::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 30%;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.5), transparent);
+}
+
 .centered-button {
   display: flex;
   justify-content: center;
@@ -469,10 +580,14 @@ button {
 }
 
 .bg-grey {
-  background-color: #c6cbcc;
+  background-color: #d2ccd6;
 } 
 
 .bg-red {
+  background-color: #e4dee1;
+}
+
+.bg-bottom{
   background-color: #e4dee1;
 }
 
@@ -529,10 +644,9 @@ button {
 .btn-bottom {
   flex: 1;
   margin: 0 4px;
-  border-radius: 15px;
+  border-radius: 16px;
   background-color: white;
   color: white;
-  border: none;
   cursor: pointer;
   text-align: center;
   width: 150px;
@@ -550,8 +664,7 @@ button {
 
 .bf-rate-label {
   position: absolute;
-  top: 67
-  px; /* Adjust as needed */
+  top: 67px; /* Adjust as needed */
   left: 10px;
   font-size: 12px;
   color: black;
@@ -819,13 +932,13 @@ button {
 /*end of indikator kanan*/
 
 .btn-first {
-  border-radius: 35px;
+  border-radius: 25px;
   padding: 10px 10px;
   width: 100%;
 }
 
 .btn-scd {
-  border-radius: 35px;
+  border-radius: 20px;
   padding: 10px 10px;
   width: 110%;
 }
