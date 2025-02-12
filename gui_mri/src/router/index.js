@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../components/home.vue';
 import DataMesin from '../components/dataMesin.vue';
 import patientCard from '@/components/patientCard.vue';
+// import keyboard from '@/components/keyboard.vue';
 
 const routes = [
   { path: '/', name: 'home', component: HomeView },

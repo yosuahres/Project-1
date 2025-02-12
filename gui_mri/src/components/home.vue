@@ -11,7 +11,7 @@
           <button class="btn btn-warning fade-effect-frth" @click="goToPatientCard">No Patient Card</button>
         </div>
         <div class="col-1 mt-1">
-          <div class="circle">
+          <div class="circle fade-effect">
             <img src="../assets/icons/home.png" alt="Home" class="home-icon" />
           </div>
         </div>
@@ -149,13 +149,30 @@
         <div class="col-6 bg-red parent-container">
         <div class="circular-timer-wrapper">
           <div class="circular-timer">
-            <div v-for="n in 7" :key="n" :style="getLineStyle(n)" class="line"></div>
+            <svg class="progress-circle" viewBox="0 0 36 36">
+              <!-- <path
+                class="circle-bg"
+                d="M18 2.0845
+                   a 15.9155 15.9155 0 0 1 0 31.831
+                   a 15.9155 15.9155 0 0 1 0 -31.831"
+              /> -->
+              <path
+                class="circle"
+                :stroke-dasharray="progress + ', 100'"
+                d="M18 2.0845
+                   a 15.9155 15.9155 0 0 1 0 31.831
+                   a 15.9155 15.9155 0 0 1 0 -31.831"
+              />
+            </svg>
+
+            
+            <!-- <div v-for="n in 7" :key="n" :style="getLineStyle(n)" class="line"></div> -->
             <div class="center-circle">
               <p class="text">Remain time</p>
               <p class="time">{{ formattedTime }}</p>
             </div>
         </div>
-            <div class="labels">
+            <!-- <div class="labels">
                 <span class="label-1h">1h</span>
                 <span class="label-2h">2h</span>
                 <span class="label-3h">3h</span>
@@ -163,13 +180,13 @@
                 <span class="label-5h">5h</span>
                 <span class="label-6h">6h</span>
                 <span class="label-7h">7h</span>
-            </div>
-            <div class="start-time">
-                Start<br>00:00
+            </div> -->
+            <!-- <div class="start-time">
+                Start<br>{{ formattedStartTime }}
             </div>
             <div class="end-time">
-                Complete<br>00:00
-            </div>
+                Complete<br>{{ formattedCompleteTime }}
+            </div> -->
         </div>
         </div>
 
@@ -282,20 +299,44 @@
 export default {
   data() {
     return {
-      remainingTime: 180,
+      totalTime: 60,
+      remainingTime: 60,
+      startTime: new Date(),
+      intervalId: null,
     };
   },
 
   computed: {
     formattedTime() {
-      const minutes = String(Math.floor(this.remainingTime / 60)).padStart(2, '0');
-      const seconds = String(this.remainingTime % 60).padStart(2, '0');
-      return `${minutes}:${seconds}`;
+      const hours = String(Math.floor(this.remainingTime / 3600)).padStart(2, '0');
+      const minutes = String(Math.floor((this.remainingTime % 3600) / 60)).padStart(2, '0');
+      return `${hours}:${minutes}`;
+    },
+    formattedStartTime() {
+      const hours = String(this.startTime.getHours()).padStart(2, '0');
+      const minutes = String(this.startTime.getMinutes()).padStart(2, '0');
+      return `${hours}:${minutes}`;
+    },
+    formattedCompleteTime() {
+      if (this.completeTime) {
+        const hours = String(this.completeTime.getHours()).padStart(2, '0');
+        const minutes = String(this.completeTime.getMinutes()).padStart(2, '0');
+        return `${hours}:${minutes}`;
+      }
+      return '00:00'; 
+    },
+    progress() {
+      return (this.totalTime - this.remainingTime) / this.totalTime * 100;
     },
   },
 
   mounted() {
+    this.completeTime = new Date(this.startTime.getTime() + this.remainingTime * 1000);
     this.startCountdown();
+  },
+
+  beforeDestroy() {
+    clearInterval(this.intervalId);
   },
 
   methods: {
@@ -484,7 +525,7 @@ export default {
   border-radius: 50%;
 }
 
-.circular-timer::before {
+/*.circular-timer::before {
   content: '';
   position: absolute;
   bottom: -10px;
@@ -493,6 +534,26 @@ export default {
   height: 50%;
   background-color: #e4dee1; 
   clip-path: polygon(50% 0%, 10% 100%, 90% 100%);
+}*/
+
+.progress-circle {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 3.8;
+}
+
+.circle {
+  fill: none;
+  stroke: #4caf50;
+  stroke-width: 4;
+  /*stroke-linecap: round;*/
+  transition: stroke-dasharray 0.1s;
 }
 
 .line {
@@ -778,6 +839,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgba(31, 65, 17, 1);
 }
 
 .home-icon {

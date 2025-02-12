@@ -2,18 +2,17 @@
   <div class="main-container">
     <div class="container-fluid">
       <!-- first row -->
-      <div class="row">
+      <div class="row pad-atas">
         <div class="col-4">
-          <button class="btn btn-success date-button">19.01 (Fri) 8:03</button>
+          <button class="btn btn-success date-button mt-2">{{ formattedTime }}</button>
         </div>
         <div class="col-4">
-          <button class="triangle-button">
+          <button class="triangle-button mt-5">
             <div class="triangle"></div>
-            
           </button>
         </div>
         <div class="col-4 home-button-container">
-          <div class="circle">
+          <div class="circle mt-2">
             <img src="../assets/icons/home.png" alt="Home" class="home-icon" />
           </div>
         </div>
@@ -34,8 +33,36 @@
           </div>
         </div>
 
-        <div class="col-2 bg-red">
-          something content
+        <div class="col-2 bg-grey right-button-container mt-2">
+          <div class="row mt-2">
+            <div class="col-12 flex-center-two">
+              <button class="btn btn-right-one fade-effect-scd bg-grey">Test Button</button>
+            </div>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-12 flex-center-two">
+              <button class="btn btn-right-one fade-effect-scd bg-grey">Test Button</button>
+            </div>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-12 flex-center-two">
+              <button class="btn btn-right-one fade-effect-scd bg-grey">Test Button</button>
+            </div>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-12 flex-center-two">
+              <button class="btn btn-right-one fade-effect-scd bg-grey">Test Button</button>
+            </div>
+          </div>
+
+          <div class="row mt-4 mb-2">
+            <div class="col-12 flex-center-two">
+              <button class="btn btn-right-one fade-effect-scd bg-grey">Test Button</button>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -86,9 +113,32 @@
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      time: new Date(),
+    };
+  },
+  computed: {
+    formattedTime() {
+      const options = { day: '2-digit', month: '2-digit', weekday: 'short' };
+      const datePart = this.time.toLocaleDateString('en-GB', options).replace(',', '');
+      const timePart = this.time.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+      const [day, month] = datePart.split(' ');
+      return `${month}(${day}) ${timePart}`;
+    },
+  },
+}
+</script>
+
 <style scoped>
 .bg-green {
   background-color: green;
+}
+
+.bg-grey{
+  background-color: #d2ccd6;
 }
 
 .bg-blue {
@@ -98,6 +148,58 @@
 .bg-red {
   background-color: red;
 }
+
+.pad-atas {
+  padding-bottom: 60px;
+}
+
+/*button kanan*/
+.right-button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid black;
+  position: absolute;
+  top: 60px; 
+  right: 0; 
+  z-index: 2; 
+}
+
+.flex-center-two {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-right-one {
+  padding: 10px 30px; 
+  font-size: 1.2em;
+  width: 80%; 
+  height: 90px; 
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.fade-effect-scd{
+  position: relative;
+  overflow: hidden;
+  border: solid 1px black;
+}
+
+.fade-effect-scd::before {
+  content: '';
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 2%;
+  height: 25%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1), transparent);
+  border-radius: 25px;
+}
+/*end of button kanan*/
 
 /*button bawah*/
 .centered-button {
@@ -139,8 +241,8 @@
 }
 
 .home-icon {
-  width: 70%; /* Adjust as needed */
-  height: 70%; /* Adjust as needed */
+  width: 70%; 
+  height: 70%; 
 }
 
 .home-button-container {
@@ -154,7 +256,7 @@
 .mid-buttons-container{
   display: flex;
   flex-direction: column;
-  gap: 80px; 
+  gap: 170px; 
 }
 
 .mid-buttons{
@@ -184,7 +286,7 @@
 }
 
 .main-container {
-  background: #9f7c1e;
+  background: linear-gradient(rgba(0, 0, 0, 0.2) 2px, transparent 1px), rgba(159, 124, 30, 1);
   background-size: 100% 10px;
   min-height: 100vh;
 }
